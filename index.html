@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPT Maker - Presentation Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>📊 PPT Maker</h1>
+            <div class="header-controls">
+                <button id="exportBtn" class="btn btn-primary">📥 Export as PDF</button>
+                <button id="exportPptxBtn" class="btn btn-success">📤 Download PPTX</button>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <!-- Slide Panel (Left) -->
+            <aside class="slide-panel">
+                <div class="panel-header">
+                    <h2>Slides</h2>
+                    <button id="addSlideBtn" class="btn btn-sm btn-primary">+ Add Slide</button>
+                </div>
+                <div id="slideList" class="slide-list"></div>
+            </aside>
+
+            <!-- Editor Panel (Center) -->
+            <main class="editor-panel">
+                <div class="slide-container">
+                    <div id="slideContent" class="slide-content">
+                        <h1 contenteditable="true" class="slide-title">Click to add title</h1>
+                        <p contenteditable="true" class="slide-subtitle">Click to add subtitle</p>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Tools Panel (Right) -->
+            <aside class="tools-panel">
+                <h3>Tools</h3>
+                
+                <!-- Text Tools -->
+                <div class="tool-section">
+                    <h4>Text</h4>
+                    <button id="addTextBtn" class="btn btn-sm">+ Add Text</button>
+                    <input type="text" id="textInput" placeholder="Enter text..." class="input-field">
+                </div>
+
+                <!-- Image Tools -->
+                <div class="tool-section">
+                    <h4>Image</h4>
+                    <input type="file" id="imageInput" accept="image/*" class="input-field">
+                </div>
+
+                <!-- Shape Tools -->
+                <div class="tool-section">
+                    <h4>Shapes</h4>
+                    <button id="addRectBtn" class="btn btn-sm">□ Rectangle</button>
+                    <button id="addCircleBtn" class="btn btn-sm">○ Circle</button>
+                </div>
+
+                <!-- Formatting -->
+                <div class="tool-section">
+                    <h4>Format</h4>
+                    <div class="format-group">
+                        <label>Background Color:</label>
+                        <input type="color" id="bgColor" value="#ffffff" class="color-picker">
+                    </div>
+                    <div class="format-group">
+                        <label>Font Size:</label>
+                        <input type="number" id="fontSize" value="16" min="8" max="72" class="input-field">
+                    </div>
+                    <div class="format-group">
+                        <label>Font Color:</label>
+                        <input type="color" id="fontColor" value="#000000" class="color-picker">
+                    </div>
+                </div>
+
+                <!-- Slide Actions -->
+                <div class="tool-section">
+                    <h4>Slide Actions</h4>
+                    <button id="deleteSlideBtn" class="btn btn-sm btn-danger">🗑️ Delete Slide</button>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
